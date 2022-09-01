@@ -60,5 +60,6 @@ crashlytics-build.properties
 
 # General
 .DS_Store
+._.DS_Store
 .AppleDouble
 .LSOverride
