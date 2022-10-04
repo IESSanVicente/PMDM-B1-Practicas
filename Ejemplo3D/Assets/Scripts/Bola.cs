@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bola : MonoBehaviour
 {
-    float velocidadAvance = 1000f;
+    float velocidadAvance = 750;
     float velocidadRotac = 200f;
     float xInicial, zInicial;
     int vidas = 3;
