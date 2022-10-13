@@ -8,6 +8,7 @@ public class Salida : MonoBehaviour
     {
         if (other.tag == "Player") {
             Debug.Log("Salida!!");
+            other.SendMessage("ChoqueSalida");
             Application.Quit();
         }
     }

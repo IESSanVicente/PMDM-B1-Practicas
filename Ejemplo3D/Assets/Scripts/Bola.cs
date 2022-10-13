@@ -9,12 +9,15 @@ public class Bola : MonoBehaviour
     float xInicial, zInicial;
     int vidas = 3;
 
+    private AudioSource reproductor;
+    public AudioClip[] audios;
+
     // Start is called before the first frame update
     void Start()
     {
         xInicial = transform.position.x;
         zInicial = transform.position.z;
-
+        reproductor = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,11 +37,25 @@ public class Bola : MonoBehaviour
         Debug.Log("Una vida menos");
         transform.position = new Vector3(xInicial, transform.position.y, zInicial);
         vidas--;
+        ChoqueEnemigo();
 
         if (vidas <= 0)
         {
             Debug.Log("Partida terminada");
             Application.Quit();
         }
+    }
+
+    public void ChoqueSalida()
+    {
+        reproductor.clip = audios[0];
+        reproductor.Play();
+    }
+
+    public void ChoqueEnemigo()
+    {
+        Debug.Log("Sonido choque enemigo");
+        reproductor.clip = audios[1];
+        reproductor.Play();
     }
 }
